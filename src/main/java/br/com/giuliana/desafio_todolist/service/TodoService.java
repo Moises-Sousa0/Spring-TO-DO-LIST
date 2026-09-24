@@ -1,0 +1,38 @@
+package br.com.giuliana.desafio_todolist.service;
+
+import br.com.giuliana.desafio_todolist.entity.Todo;
+import br.com.giuliana.desafio_todolist.repository.TodoRepository;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TodoService {
+    private TodoRepository todoRepository;
+
+    //injecao de dependencia via construtor
+    public TodoService (TodoRepository todoRepository) {
+        this.todoRepository = todoRepository;
+    }
+
+    public List<Todo> create(Todo todo){
+        todoRepository.save(todo);
+        return list();
+    }
+
+    public List<Todo> list(){
+        Sort sort = Sort.by("prioridade").descending().and(Sort.by("nome").ascending());
+        return todoRepository.findAll(sort);
+    }
+
+    public List<Todo> update(){
+
+        return list();
+    }
+
+    public List<Todo> delete(){
+
+        return list();
+    }
+}

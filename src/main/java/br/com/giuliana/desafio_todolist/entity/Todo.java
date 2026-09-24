@@ -1,0 +1,57 @@
+package br.com.giuliana.desafio_todolist.entity;
+
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "todos")
+public class Todo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nome;
+    private String descricao;
+    private String realizado;
+
+    public int getPrioridade() {
+        return prioridade;
+    }
+
+    public void setPrioridade(int prioridade) {
+        this.prioridade = prioridade;
+    }
+
+    public String getRealizado() {
+        return realizado;
+    }
+
+    public void setRealizado(String realizado) {
+        this.realizado = realizado;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    private int prioridade;
+}
