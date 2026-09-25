@@ -2,6 +2,8 @@ package br.com.giuliana.desafio_todolist.entity;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "todos")
@@ -9,9 +11,23 @@ public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank
     private String nome;
+    @NotBlank
     private String descricao;
     private String realizado;
+    @NotNull
+    private int prioridade;
+
+    public Todo() {
+    }
+
+    public Todo(String nome, String realizado, String descricao, int prioridade) {
+        this.nome = nome;
+        this.realizado = realizado;
+        this.descricao = descricao;
+        this.prioridade = prioridade;
+    }
 
     public int getPrioridade() {
         return prioridade;
@@ -53,5 +69,5 @@ public class Todo {
         this.id = id;
     }
 
-    private int prioridade;
+
 }
