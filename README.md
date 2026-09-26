@@ -11,7 +11,7 @@ API RESTful para gerenciamento de tarefas (CRUD)
 - **Java & Spring Boot**
 - **Spring MVC**
 - **Spring Data JPA**
-- **MySQL**
+- **MySQL** 
 - **SpringDoc OpenAPI 3** (Documentação Swagger)
 
 ---
